@@ -43,13 +43,6 @@ def Crypto_Decode(text, num):
     return res
 
 def Check_Argv(text):
-    # res = ''
-    # i = (-1)
-    # for let in sys.argv: i += 1
-    # while (i > 0):
-    #     res += sys.argv[i]
-    #     i -= 1
-    # print('Result: {r}'.format(r = len(res)))
     return print("Length: {l} symbols".format(l = len(text)))
 
 def Info(num):
@@ -59,11 +52,3 @@ def Info(num):
         2: "ROT24"
     }
     return find[num]
-
-def Codec(text, num):
-    res = {
-        0: str.translate(text, rot1),
-        1: str.translate(text, rot13),
-        2: str.translate(text, rot24)
-    }
-    return res[num]
