@@ -1,7 +1,6 @@
 import sys, random, string
 
 def Crypto_Encode(text, num):
-    num = int(num)
     rots = {
         0: str.maketrans(
             "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789",
@@ -22,7 +21,6 @@ def Crypto_Encode(text, num):
     return res
 
 def Crypto_Decode(text, num):
-    num = int(num)
     rots = {
         0: str.maketrans(
             "BCDEFGHIJKLMNOPQRSTUVWXYZAbcdefghijklmnopqrstuvwxyza1234567890",
