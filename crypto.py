@@ -2,7 +2,11 @@ import sys
 sys.path.append("modules/")
 import main
 
-Text = ''
+main.Check_Argv(sys.argv[1])
 
-Text = main.Check_Argv()
-main.Crypto_Encode(Text)
+if (sys.argv[2].lower() == "enc"):
+    main.Crypto_Encode(sys.argv[1], sys.argv[3])
+elif (sys.argv[2].lower() == "dec"):
+    main.Crypto_Decode(sys.argv[1], sys.argv[3])
+else:
+    print("Error: Non-Value")
