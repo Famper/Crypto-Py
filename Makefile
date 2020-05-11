@@ -40,3 +40,13 @@ test_words:
 	python $(NAME) $(TEXT_20) dec 1
 	python $(NAME) $(TEXT_3) enc 2
 	python $(NAME) $(TEXT_30) dec 2
+
+mini:
+	python $(NAME) $(TEXT_1) def def
+	python $(NAME) $(TEXT_1) def
+	python $(NAME) $(TEXT_1) 0
+	python $(NAME) $(TEXT_1) def -1
+	python $(NAME) $(TEXT_1) ddd def
+	python $(NAME) $(TEXT_1) ddd ddd
+	python $(NAME) def def
+	python $(NAME) $(TEXT_1) 0 def

@@ -48,19 +48,15 @@ def Crypto_Decode(text, num):
     return res
 
 
-def Check_Argv(text, type, code):
-    if (type.lower() == 'enc' or
-            type.lower() == 'dec'):
-        if (code >= 0 and code <= 2):
-            pass
-        else:
-            return False
-    else:
-        return False
+def Check_Argv(text, type, num):
+    type, num, b_type, b_num = Check_Def_Arg(type, num)
+
+    if (b_type is False or b_num is False):
+        return (type, num, False)
 
     print("Length: {num} symbols".format(num=len(text)))
 
-    return (type, True)
+    return (type, int(num), True)
 
 
 def Info(num):
@@ -70,3 +66,40 @@ def Info(num):
         2: "ROT24"
     }
     return find[num]
+
+
+def Check_Def_Arg(type, num):
+    lists = [
+        'def',
+        'enc',
+        'dec'
+    ]
+
+    nums = [
+        'def',
+        '0',
+        '1',
+        '2'
+    ]
+
+    for let in lists:
+        if (str(type) == let):
+            b_type = True
+            break
+        else:
+            b_type = False
+
+    if (str(type) == 'def'):
+        type = str('enc')
+
+    for let in nums:
+        if (str(num) == let):
+            b_num = True
+            break
+        else:
+            b_num = False
+
+    if (str(num) == 'def'):
+        num = int(0)
+
+    return (type, num, b_type, b_num)
